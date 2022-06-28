@@ -26,6 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseLongLatMiddleware();
+app.CheckUserId();
 
 // Initialise and seed database
 using (var scope = app.Services.CreateScope())

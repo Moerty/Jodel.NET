@@ -5,6 +5,7 @@ namespace Jodel.NET.Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {
+    DbSet<Post> Posts { get; }
     DbSet<TodoList> TodoLists { get; }
 
     DbSet<TodoItem> TodoItems { get; }

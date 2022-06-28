@@ -13,7 +13,7 @@ public class CurrentUserService : ICurrentUserService
         _httpContextAccessor = httpContextAccessor;
     }
 
-    public string? UserId => _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+    public Guid UserId => Guid.Parse(_httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
     public double Longtitude => double.Parse(_httpContextAccessor.HttpContext.Request.Headers?["Longtitude"]);
     public double Latitude => double.Parse(_httpContextAccessor.HttpContext.Request.Headers?["Latitude"]);
 }
